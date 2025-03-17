@@ -1,214 +1,233 @@
-Analizinte la kodaron, mi vidas ke ĝi estas aplikaĵo por anstataŭigi Esperantajn vortojn per ĉinaj ideogramoj (kanji) kaj aldoni rubi-anotaciojn. Mi kreos ampleksan gvidlibron por Esperantaj uzantoj.
+# Manlibro de Uzanto: Esperanto-Kanji Konvertilo kaj Rubia Anotacia Ilo
 
-# Gvidlibro por la Kanji-anstataŭigilo kaj Rubi-anotacia ilo por Esperanto
+## Enhavo
+1. Enkonduko
+2. Bazaj Funkcioj
+3. Kiel Uzi la Ĉefan Paĝon
+4. Specialaj Teknikaj Notoj
+5. Agordi Proprajn Anstataŭigajn Regulojn
+6. Eligaj Formatoj
+7. Konsiloj kaj Solvoj de Problemoj
 
-## Enkonduko
+## 1. Enkonduko
 
-Bonvenon al la "Anstataŭigilo por Esperantaj tekstoj per ĉinaj ideogramoj kaj rubi-anotacia ilo"! Ĉi tiu aplikaĵo permesas al vi transformi vian Esperantan tekston per diversaj manieroj:
+Bonvenon al la Esperanto-Kanji Konvertilo kaj Rubia Anotacia Ilo! Ĉi tiu aplikaĵo permesas al vi:
 
-1. **Anstataŭigi** Esperantajn radikojn per ĉinaj ideogramoj (kanji)
-2. **Aldoni rubi-anotaciojn** super aŭ sub la originalaj vortoj
-3. **Konservi** specifajn tekstopartojn senŝanĝe
-4. **Apliki lokajn anstataŭigojn** nur en certaj partoj de via teksto
+- **Anstataŭigi** Esperantajn vortojn per ĉinaj ideogramoj (kanji)
+- **Aldoni** rubiajn anotaciojn al Esperantaj vortoj
+- **Krei** proprajn anstataŭigajn regulojn laŭ viaj preferoj
+- **Elekti** inter diversaj eligaj formatoj (HTML, krampoj, ktp)
 
-La celo estas helpi al vi vizualigi la Esperantan lingvon tra ideograma perspektivo, krei instrumaterialon aŭ simple esplori la lingvon laŭ nova vidpunkto.
+La aplikaĵo utilas por instruaj celoj, por helpi lernantojn kompreni la strukturon de Esperantaj vortoj, kaj por esplorado de lingvaj interrilatoj. Ĝi ankaŭ estas interesa ilo por vizualigi Esperanton per ĉinaj ideogramoj.
 
-## Kio estas "rubi-anotacio"?
+## 2. Bazaj Funkcioj
 
-Rubi-anotacio estas metodo por aldoni malgrandajn klarigojn (ofte prononcojn) super aŭ sub teksto, uzata en japana, ĉina kaj aliaj lingvoj. En nia aplikaĵo, vi povas uzi ĝin por montri la originalan tekston dum anstataŭigo per ĉinaj ideogramoj, aŭ inverse.
+La aplikaĵo konsistas el du ĉefaj partoj:
 
-## Komencante
+### Ĉefa Paĝo (Anstataŭigilo)
+Uzata por anstataŭigi Esperantajn tekstojn per ideogramoj aŭ aldoni rubiajn anotaciojn.
 
-### Paŝo 1: Aliro al la aplikaĵo
+### Paĝo por Generi JSON-dosieron
+Uzata por krei proprajn anstataŭigajn regulojn laŭ viaj preferoj (por spertaj uzantoj).
 
-Vizitu la aplikaĵon ĉe unu el la disponeblaj ligil-adresoj por via preferata lingvo:
-- **Esperanta versio**: https://esperanto-kanji-converter-and-ruby-annotation-tool-esperanto.streamlit.app/
+## 3. Kiel Uzi la Ĉefan Paĝon
 
-### Paŝo 2: Elekti JSON-dosieron por anstataŭigo
+### Paŝo 1: Elekti JSON-dosieron por anstataŭigo
 
-La unua paŝo estas elekti JSON-dosieron, kiu enhavas la regulojn por anstataŭigi Esperantajn vortojn:
+La aplikaĵo bezonas JSON-dosieron, kiu enhavas la regulojn por anstataŭigi Esperantajn vortojn per ideogramoj. Vi povas:
 
-- **Uzi la defaŭltan JSON-dosieron**: La plej simpla elekto. La aplikaĵo uzos la jam inkluditajn anstataŭigajn regulojn.
-- **Alŝuti dosieron**: Se vi havas proprajn anstataŭigojn, vi povas alŝuti propran JSON-dosieron.
+- **Uzi la defaŭltan JSON-dosieron** (rekomendita por komencantoj)
+- **Alŝuti propran JSON-dosieron** (se vi jam kreis ĝin)
 
-Se vi volas vidi ekzemplon de la JSON-strukturo, klaku sur "Elŝuti ekzemplan JSON-dosieron".
+Se vi volas vidi ekzemplon de la JSON-dosiero, klaku "Elŝuti ekzemplan JSON-dosieron" sub tiu elekto.
 
-### Paŝo 3: Elekti eligan formaton
+### Paŝo 2: Agordi la paralelan pretigon (laŭvole)
 
-Elektu el sep diversaj formatoj por la eligota rezulto:
+Se vi traktas grandajn tekstojn, vi povas uzi la paralelan pretigon por plirapidigi la procezon:
 
-1. **HTML-formato kun rubi-anotacioj kaj grandec-ĝustigo**: La Esperanta teksto restas ĉefa, kun rubianotacio supre, ĝustigante la grandecon de la anotacioj.
-2. **HTML-formato kun rubi-anotacioj, grandec-ĝustigo kaj kanji-anstataŭigo**: La ĉinaj ideogramoj fariĝas la ĉefa teksto, kun Esperanta rubi-anotacio supre.
-3. **HTML-formato**: Simpla HTML-formata rubi sen grandec-ĝustigo.
-4. **HTML-formato kun kanji-anstataŭigo**: Simpla HTML-formata rubi kun ĉinaj ideogramoj kiel ĉefa teksto.
-5. **Formato kun krampoj**: Montras la Esperantan tekston kun tradukoj en krampoj.
-6. **Formato kun krampoj kaj kanji-anstataŭigo**: Montras ideogramojn kun Esperanta teksto en krampoj.
-7. **Nur konservi la anstataŭigitan tekston (simpla anstataŭigo)**: Montras nur la anstataŭigitan tekston sen la originalo.
+1. Klaku "Malfermi agordojn por paralela pretigo"
+2. Marku la skatoleton "Uzi paralelan pretigon"
+3. Elektu la kvanton da samtempaj procezoj (2-4)
 
-### Paŝo 4: Altnivelaj agordoj (laŭvole)
+### Paŝo 3: Elekti la eligan formaton
 
-Klaku sur "Malfermi agordojn por paralela pretigo" por agordi la uzadon de pluraj procezoj por plirapidigi la anstataŭigon. Ĉi tio estas utila por tre longaj tekstoj. Vi povas elekti la nombron da samtempaj procezoj (2-4).
+Elektu kiel vi volas vidi la rezulton:
 
-### Paŝo 5: Enigi vian tekston
+- **HTML-formato kun rubi-anotacioj kaj grandec-ĝustigo** - Montras Esperantajn vortojn kun ideogramoj kiel rubiaj anotacioj, aŭtomate ĝustigante la grandecon
+- **HTML-formato kun rubi-anotacioj, grandec-ĝustigo kaj kanji-anstataŭigo** - Montras ideogramojn kun Esperantaj vortoj kiel rubiaj anotacioj
+- **HTML-formato** - Simpla HTML-formato kun rubiaj anotacioj (sen grandec-ĝustigo)
+- **HTML-formato kun kanji-anstataŭigo** - Simpla HTML-formato kun inversigitaj rubiaj anotacioj (ideogramoj kiel ĉefteksto)
+- **Formato kun krampoj** - Montras vortojn en formo "Esperanto(ideogramo)"
+- **Formato kun krampoj kaj kanji-anstataŭigo** - Montras vortojn en formo "ideogramo(Esperanto)"
+- **Nur konservi la anstataŭigitan tekston** - Montras nur la ideogramojn sen la originala Esperanta teksto
 
-Vi povas enigi vian Esperantan tekston per du manieroj:
+### Paŝo 4: Enigi la tekston
 
-1. **Mane tajpi** la tekston en la tekstkampon.
-2. **Alŝuti dosieron** (TXT, CSV aŭ MD-formato) kun via Esperanta teksto.
+Vi povas enigi la tekston per du manieroj:
 
-### Paŝo 6: Elekti la prezentan formon por specifaj Esperantaj literoj
+- **Mane tajpi** - Rekte enigi la tekston en la tekstujon
+- **Alŝuti dosieron** - Alŝuti TXT, CSV aŭ MD-dosieron kun via teksto (UTF-8 enkodado rekomendita)
 
-Elektu kiel la specifaj Esperantaj literoj (ĉ, ĝ, ĥ, ktp.) aperos en la rezulto:
+### Paŝo 5: Elekti la formon de Esperantaj literoj
 
-1. **Supersigna formo** (ĉ, ĝ, ĵ ktp.)
-2. **x-formato** (cx, gx, jx ktp.)
-3. **^-formato** (c^, g^, j^ ktp.)
+Elektu kiel la Esperantaj supersignaj literoj (ĉ, ĝ, ĥ, ĵ, ŝ, ŭ) aperu en la rezulto:
 
-### Paŝo 7: Sendi kaj vidi la rezulton
+- **Supersigna formo** - Uzas la oficialan formon kun supersignoj (ĉ, ĝ, ĥ...)
+- **x-formato** - Uzas la x-sistemon (cx, gx, hx...)
+- **^-formato** - Uzas la hatforma sistemo (c^, g^, h^...)
 
-Klaku la butonon "Sendi" por pretigi vian tekston. Post kiam la procezado estas finita, la rezulto estos montrata malsupre. Vi povas vidi la rezultojn per:
+### Paŝo 6: Procezi kaj rigardi la rezulton
 
-- HTML-antaŭrigardo (por HTML-formatoj)
-- Rezulta HTML-kodo (por HTML-formatoj)
-- Rezulta teksto (por aliaj formatoj)
+1. Klaku la butonon "Sendi" por procezi vian tekston
+2. La rezulto aperos sub la formularo
+3. Vi povas vidi la rezulton en diversaj formetoj (HTML-antaŭrigardo, HTML-kodo aŭ simpla teksto, depende de via elektita formato)
+4. Klaku "Elŝuti la rezulton" por konservi la rezulton kiel dosieron
 
-Fine, vi povas elŝuti la rezulton kiel HTML-dosieron por uzi aliloke.
+## 4. Specialaj Teknikaj Notoj
 
-## Specialaj funkcioj
+### Specialaj Markadoj por Kontroli Anstataŭigon
 
-### Anstataŭigaj kontroloj
+Vi povas uzi specialajn markadojn por precize kontroli kiuj partoj de via teksto estos anstataŭigitaj:
 
-La aplikaĵo provizas du specialajn manojn por kontroli kiuj partoj de via teksto estas anstataŭigitaj:
+- **%teksto%** - Teksto ĉirkaŭita per procentosignoj **NE** estos anstataŭigita. Ekzemple, "%Esperanto%" restos "Esperanto" en la fina rezulto.
+- **@teksto@** - Teksto ĉirkaŭita per @-signoj estos anstataŭigita **LOKE** (nur ene de tiu fragmento). Tio estas utila por apliki specifajn anstataŭigojn al specifaj vortoj.
 
-1. **Protektado de teksto kontraŭ anstataŭigo** - Ĉirkaŭu parton de via teksto per **%** simboloj:
-   ```
-   %Ĉi tiu parto ne estos anstataŭigita%
-   ```
+Limigoj:
+- Por teksto en %-signoj: maksimume 50 signoj
+- Por teksto en @-signoj: maksimume 18 signoj
 
-2. **Loka anstataŭigo** - Ĉirkaŭu parton de via teksto per **@** simboloj por anstataŭigi nur tiun parton:
-   ```
-   @Nur ĉi tiu parto estos anstataŭigita@
-   ```
+## 5. Agordi Proprajn Anstataŭigajn Regulojn
 
-## Kreado de propra JSON-dosiero por anstataŭigo
+Se vi volas krei proprajn anstataŭigajn regulojn, vi povas uzi la duan paĝon de la aplikaĵo "Krei JSON-dosieron por anstataŭigi (ĉinajn ideogramojn) en Esperantaj frazoj".
 
-Se vi volas krei propran JSON-dosieron kun viaj preferataj anstataŭigoj, vi povas uzi la duan paĝon de la aplikaĵo:
+### Paŝo 1: Prepari CSV-dosieron
 
-1. Alklaku la maldekstran menuon kaj elektu "Paĝo por generi JSON-dosieron..."
-2. Sekvu la instrukciojn:
-   - Elektu CSV-dosieron kun Esperantaj radikoj kaj tradukaj informoj
-   - Elektu JSON-dosieron(jn) por reguloj pri segmentado de Esperantaj radikoj kaj anstataŭigoj
-   - Agordu paralelan prilaboradon se necesas
-   - Klaku "Krei la JSON-dosieron por anstataŭigo"
-   - Elŝutu la rezultan JSON-dosieron
+Vi bezonas CSV-dosieron, kiu enhavas Esperantajn radikojn kaj iliajn respondajn ideogramojn aŭ tradukojn. Vi povas:
 
-### Formo de CSV-dosiero
+- **Alŝuti propran CSV-dosieron** - Krei vian propran liston de Esperantaj radikoj kaj ideogramoj
+- **Uzi la defaŭltan CSV-dosieron** - Uzi la provizitan ekzemplon
 
-La CSV-dosiero devus enhavi du kolumnojn:
-- **Unua kolumno**: Esperanta radiko
-- **Dua kolumno**: Traduko, ĉina ideogramo aŭ alia priskriba teksto
+La CSV-dosiero devas havi la formaton:
+```
+Esperanta_radiko,Ideogramo_aŭ_Traduko
+am,愛
+bird,鳥
+...
+```
+
+### Paŝo 2: Prepari JSON-dosieron(jn) (laŭvole)
+
+Vi povas alŝuti du specojn de JSON-dosieroj por plidetale agordi la anstataŭigon:
+
+1. **JSON pri segmentado de Esperantaj radikoj** - Indikas kiel dividi Esperantajn vortojn je radikoj
+2. **JSON pri la finaj anstataŭigitaj tekstoj** - Permesas pli detalajn agordojn pri la fina aspekto
+
+Vi povas ankaŭ uzi la defaŭltajn dosierojn por ambaŭ.
+
+### Paŝo 3: Agordi la paralelan prilaboradon (laŭvole)
+
+Simile al la ĉefa paĝo, vi povas agordi la paralelan prilaboradon por plirapidigi la procezon.
+
+### Paŝo 4: Krei la JSON-dosieron
+
+1. Klaku "Krei la JSON-dosieron por anstataŭigo"
+2. Atendu dum la aplikaĵo prilaboras la datumojn (tio povas daŭri iom da tempo por grandaj dosieroj)
+3. Kiam la proceso finiĝas, klaku "Elŝuti la finan anstataŭigan liston" por konservi la JSON-dosieron
+
+### Paŝo 5: Uzi vian kreitan JSON-dosieron
+
+Post kiam vi elŝutis vian JSON-dosieron, vi povas uzi ĝin en la ĉefa paĝo:
+1. Iru al la ĉefa paĝo
+2. Elektu "Alŝuti dosieron" ĉe la JSON-elektilo
+3. Alŝutu vian ĵus kreitan JSON-dosieron
+
+## 6. Eligaj Formatoj
+
+La aplikaĵo ofertas plurajn formatojn por la eliga teksto. Jen pli da detaloj pri ĉiu:
+
+### HTML-formato kun rubi-anotacioj kaj grandec-ĝustigo
+
+- Montras Esperantajn vortojn kiel ĉeftekston
+- Ideogramoj aperas kiel rubiaj anotacioj super la vortoj
+- La grandeco de la rubiaj anotacioj estas aŭtomate ĝustigita laŭ la longo de la vorto
+- Por tre longaj rubiaj anotacioj, aŭtomata linio-rompo aplikatas
+
+Ekzemplo:
+```html
+<ruby>amiko<rt class="M_M">友</rt></ruby>
+```
+
+### HTML-formato kun rubi-anotacioj, grandec-ĝustigo kaj kanji-anstataŭigo
+
+- Inversigita versio de la supre
+- Ideogramoj aperas kiel ĉefteksto
+- Esperantaj vortoj aperas kiel rubiaj anotacioj super la ideogramoj
+- La grandeco estas simile ĝustigita
+
+Ekzemplo:
+```html
+<ruby>友<rt class="M_M">amiko</rt></ruby>
+```
+
+### Formato kun krampoj
+
+- Pli simpla formato sen HTML
+- Montras vortojn en formo "Esperanto(ideogramo)"
 
 Ekzemplo:
 ```
-esper,希望
-hom,人
-lern,学ぶ
+amiko(友)
 ```
 
-### Formo de JSON-dosieroj por segmentado
+### Formato kun krampoj kaj kanji-anstataŭigo
 
-La JSON-dosiero por radiksegmentado specifas kiel dividi vortojn en siajn radikojn. Ĝi povas esti kompleksa, sed jen ekzemplo:
+- Inversigita versio de la supre
+- Montras vortojn en formo "ideogramo(Esperanto)"
 
-```json
-[
-  ["am", "dflt", ["verbo_s1"]],
-  ["bon", "dflt", ["a", "e"]]
-]
+Ekzemplo:
+```
+友(amiko)
 ```
 
-Tio specifas ke:
-- "am" estas traktita kiel verbo kun aktivaj verbofinaĵoj ("verbo_s1")
-- "bon" ricevas afiksojn "a" kaj "e" por formi "bona" kaj "bone"
+### Nur konservi la anstataŭigitan tekston
 
-## Teĥnikaj detaloj
+- Montras nur la ideogramojn sen la originala Esperanta teksto
+- Utila por tujaj komparoj aŭ specifa analizo
 
-La aplikaĵo konsistas el pluraj komponentoj:
-
-1. **Ĉefa aplikaĵo** (main.py) - La enirpunkto kaj ĉefa uzantinterfaco
-2. **JSON-generilo** (Paĝo por generi...) - Por krei proprajn anstataŭigajn regulojn
-3. **Tekst-anstataŭiga modulo** - Pritraktas la anstataŭigan procezon
-4. **JSON-kreada modulo** - Helpas en la kreado de aranĝoj por anstataŭigoj
-
-La aplikaĵo uzas kompleksan algoritmon por:
-- Identigi radikvortojn en Esperanto-teksto
-- Apliki anstataŭigajn regulojn laŭ ilia prioritato
-- Generi HTML-kodon kun rubi-anotacioj
-- Adapti la grandecon de rubianotacioj laŭ la proporcio de teksta larĝeco
-
-## Ekzemploj de uzado
-
-### Ekzemplo 1: Baza anstataŭigo
-
-**Eniga teksto:**
+Ekzemplo:
 ```
-La patro lernas Esperanton.
+友
 ```
 
-**Post anstataŭigo (HTML-formato kun rubi-anotacioj):**
-```html
-<ruby>La<rt>定冠詞</rt></ruby> <ruby>patr<rt>父</rt></ruby>o <ruby>lern<rt>学ぶ</rt></ruby>as <ruby>Esperant<rt>エスペラント</rt></ruby>on.
-```
+## 7. Konsiloj kaj Solvoj de Problemoj
 
-### Ekzemplo 2: Uzado de protektado per %
+### Optimumaj Praktikoj
 
-**Eniga teksto:**
-```
-Mi %parolas% Esperanton.
-```
+- **Por novaj uzantoj**: Komencu per la defaŭltaj JSON kaj CSV-dosieroj por komprenigi kiel la aplikaĵo funkcias.
+- **Por grandaj tekstoj**: Uzu la paralelan pretigon por plirapidigi la procezon.
+- **Por specifaj vortoj**: Uzu la @-markadon por kontroli kiel specifaj vortoj estas anstataŭigitaj.
+- **Por konservi partojn de la teksto**: Uzu la %-markadon por eviti anstataŭigon.
 
-**Post anstataŭigo:**
-```html
-<ruby>Mi<rt>私</rt></ruby> parolas <ruby>Esperant<rt>エスペラント</rt></ruby>on.
-```
+### Oftaj Problemoj kaj Solvoj
 
-### Ekzemplo 3: Uzado de loka anstataŭigo per @
+1. **Problemo**: La aplikaĵo ne ŝargas la JSON-dosieron.
+   **Solvo**: Certigu, ke la JSON-dosiero estas en la ĝusta formato. Vi povas elŝuti ekzemplon kaj kompari.
 
-**Eniga teksto:**
-```
-La hundo @kuras rapide@.
-```
+2. **Problemo**: Kelkaj vortoj ne estas anstataŭigitaj.
+   **Solvo**: Verŝajne tiuj vortoj ne estas en la JSON-dosiero. Vi povas krei propran JSON-dosieron aldonante tiujn vortojn.
 
-**Post anstataŭigo:**
-```html
-<ruby>La<rt>定冠詞</rt></ruby> <ruby>hund<rt>犬</rt></ruby>o <ruby>kur<rt>走る</rt></ruby>as <ruby>rapid<rt>速い</rt></ruby>e.
-```
+3. **Problemo**: La aplikaĵo malrapide prilaboras grandajn tekstojn.
+   **Solvo**: Aktivigu la paralelan pretigon kaj agordu la kvanton da procezoj pli alten.
 
-## Problemsolvado
+4. **Problemo**: La teksto estas tro granda por montri ĝin entute.
+   **Solvo**: La aplikaĵo montras nur limigitan antaŭrigardon (la unuaj 247 linioj kaj la lastaj 3 linioj) por tre longaj tekstoj. Vi povas elŝuti la plenan rezulton per la elŝuta butono.
 
-### La teksto ne estas anstataŭigita kiel atendite
+### Notoj pri Specialaĵoj
 
-- Kontrolu ĉu viaj Esperantaj vortoj havas la ĝustan bazan formon
-- Kontrolu ĉu la JSON-dosiero enhavas la necesajn anstataŭigajn regulojn
-- Provu uzi la defaŭltan JSON-dosieron por komparceloj
+- La aplikaĵo povas trakti diversajn formojn de Esperantaj supersignaj literoj (ĉ, cx, c^) kaj konvertas ilin al la elektita formato.
+- La JSON-dosiero estas kreita kun atento al la longo de vortoj kaj la strukturo de Esperantaj radikoj.
+- La aplikaĵo inkluzivas specialan traktadon por verbaj sufiksoj (-as, -is, -os, ktp) kaj aliaj gramatikaj finaĵoj.
 
-### La rubi-anotacio estas tro malgranda aŭ tro granda
+---
 
-- Elektu la formaton kun "grandec-ĝustigo" por aŭtomate adapti la grandecon de la anotacioj
-- Redaktu la rezultan HTML-kodon por ĝustigi la CSS-stilojn laŭbezone
-
-### La procezado estas tro malrapida
-
-- Aktivigu "paralelan pretigon" en la altnivelaj agordoj
-- Pligarandigu la nombron da samtempaj procezoj (ĝis 4)
-- Dividu grandan tekston en plurajn malpli grandajn partojn
-
-## Pliaj resursoj
-
-- La aplikaĵo estas disponebla en 14 diversaj lingvoj - elektu la version plej konvenan por vi el la ligil-sekcio sube.
-- La fontokodo kaj pliaj informoj troviĝas en la GitHub-deponejo: [https://github.com/TakafumiYamauchi/Esperanto-Kanji-Converter-and-Ruby-Annotation-Tool-Esperanto](https://github.com/TakafumiYamauchi/Esperanto-Kanji-Converter-and-Ruby-Annotation-Tool-Esperanto)
-
-## Konkludo
-
-Ĉi tiu aplikaĵo ofertas unikan manieron esplori la rilaton inter Esperanto kaj ĉinaj ideogramoj. Ĝi povas esti utila por instruado, lingvolernado, aŭ simple por krei interesan vizualan prezenton de via Esperanta teksto.
-
-Eksperimentu kun diversaj formatoj kaj agordoj por trovi la plej taŭgan kombinaĵon por viaj bezonoj!
+Ni esperas, ke vi ĝuos uzi ĉi tiun ilan por esplori la interrilaton inter Esperanto kaj ĉinaj ideogramoj! Se vi havas pliajn demandojn, bonvolu konsulti la GitHub-deponejon aŭ kontakti la evoluigantojn.
